@@ -516,7 +516,7 @@ bool ImGui::ButtonBehavior(const ImRect& bb, ImGuiID id, bool* out_hovered, bool
         {
             hovered = true;
             SetHoveredID(id);
-            if (g.HoveredIdTimer - g.IO.DeltaTime <= DRAGDROP_HOLD_TO_OPEN_TIMER && g.HoveredIdTimer >= DRAGDROP_HOLD_TO_OPEN_TIMER)
+            if (g.HoveredIdTimer - g.IO.DeltaTime <= GetStyle().DragDropHoldToOpenTimeout && g.HoveredIdTimer >= GetStyle().DragDropHoldToOpenTimeout) // Ugly
             {
                 pressed = true;
                 g.DragDropHoldJustPressedId = id;
